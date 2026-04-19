@@ -24,13 +24,15 @@ class DataIngestion:
         zip_file_name = os.listdir(path=self.config.zipped_file_dir)[0]
         unzip_dir, unzipped_filename = os.path.split(self.config.unzipped_file_path)
 
-        # unzip the data
-        with zipfile.ZipFile(os.path.join(self.config.zipped_file_dir, zip_file_name)) as zip_ref:
-            zip_ref.extractall(unzip_dir)
+        if unzipped_filename not in os.listdir(self.config.root_dir):
+            # unzip the data
+            with zipfile.ZipFile(os.path.join(self.config.zipped_file_dir, zip_file_name)) as zip_ref:
+                zip_ref.extractall(unzip_dir)
 
         # change the name of the unzipped file.
 
         for item in os.listdir(self.config.root_dir):
+
             if ".csv" in item:
                 old_name = os.path.join(self.config.root_dir, item)
                 new_name = os.path.join(self.config.root_dir, unzipped_filename)
