@@ -8,4 +8,11 @@ class DataIngestionConfig:
     zipped_file_dir: Path
     unzipped_file_path: Path
 
+@dataclass
+class DataValidationConfig:
+    root_dir: Path
+    unzipped_data_dir: Path
+    status_file_path: Path
+    all_schema: dict
+    target_column: str
     

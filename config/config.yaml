@@ -5,4 +5,10 @@ DataIngestion:
   source_url: ketangangal/heart-disease-dataset-uci
   zipped_file_dir: artifacts/data_ingestion/zip_data/
   unzipped_file_path: artifacts/data_ingestion/heart.csv
+
+
+DataValidation:
+  root_dir: artifacts/data_validation
+  unzipped_data_dir: artifacts/data_ingestion/heart.csv
+  status_file_path: artifacts/data_validation/status.txt
   
