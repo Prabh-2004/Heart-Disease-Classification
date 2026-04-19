@@ -7,3 +7,5 @@ kagglehub
 kagglehub[pandas-datasets]
 python-dotenv
 ipywidgets
+python-box
+ensure
