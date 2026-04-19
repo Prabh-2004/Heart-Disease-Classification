@@ -2,3 +2,8 @@ pandas
 numpy
 scikit-learn
 ipykernel
+kaggle
+kagglehub
+kagglehub[pandas-datasets]
+python-dotenv
+ipywidgets
