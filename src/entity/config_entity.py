@@ -16,3 +16,11 @@ class DataValidationConfig:
     all_schema: dict
     target_column: str
     
+@dataclass
+class DataTransformationConfig:
+    root_dir: Path
+    unzipped_data_dir: Path
+    train_file_path: Path
+    test_file_path: Path
+    target_variable: str
+    preprocessor_path: Path
