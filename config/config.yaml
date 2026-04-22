@@ -6,9 +6,14 @@ DataIngestion:
   zipped_file_dir: artifacts/data_ingestion/zip_data/
   unzipped_file_path: artifacts/data_ingestion/heart.csv
 
-
 DataValidation:
   root_dir: artifacts/data_validation
   unzipped_data_dir: artifacts/data_ingestion/heart.csv
   status_file_path: artifacts/data_validation/status.txt
   
+DataTransformation:
+  root_dir: artifacts/data_transformation
+  unzipped_data_dir: artifacts/data_ingestion/heart.csv
+  train_file_path: artifacts/data_transformation
+  test_file_path: artifacts/data_transformation
+  preprocessor_path: artifacts/data_transformation/preprocessor/preprocessor.joblib
