@@ -9,3 +9,5 @@ python-dotenv
 ipywidgets
 python-box
 ensure
+seaborn
+matplotlib
