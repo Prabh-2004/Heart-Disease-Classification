@@ -17,3 +17,4 @@ DataTransformation:
   train_file_path: artifacts/data_transformation
   test_file_path: artifacts/data_transformation
   preprocessor_path: artifacts/data_transformation/preprocessor/preprocessor.joblib
+  status_file_path: artifacts/data_validation/status.txt
