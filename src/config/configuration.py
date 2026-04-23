@@ -56,6 +56,7 @@ class ConfigurationManager:
             test_file_path=config.test_file_path,
             preprocessor_path=config.preprocessor_path,
             target_variable=schema.target_column,
+            status_file_path=config.status_file_path,
         )
 
         return data_transformation_config

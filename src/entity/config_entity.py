@@ -24,3 +24,4 @@ class DataTransformationConfig:
     test_file_path: Path
     target_variable: str
     preprocessor_path: Path
+    status_file_path: Path
