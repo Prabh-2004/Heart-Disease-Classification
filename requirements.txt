@@ -3,11 +3,11 @@ numpy
 scikit-learn
 ipykernel
 kaggle
-kagglehub
-kagglehub[pandas-datasets]
 python-dotenv
 ipywidgets
 python-box
 ensure
 seaborn
 matplotlib
+xgboost
+# mlflow
