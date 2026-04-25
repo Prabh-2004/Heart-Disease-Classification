@@ -3,7 +3,8 @@ from src.utils import read_yaml, create_directories
 from src.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig
 )
 
 class ConfigurationManager:
@@ -60,6 +61,22 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.ModelTrainer
+        params = self.params.params.to_dict()
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            processed_data_dir=config.processed_data_dir,
+            model_path=config.model_path,
+            params=params,
+        )
+
+        return model_trainer_config
+        
     
     
     

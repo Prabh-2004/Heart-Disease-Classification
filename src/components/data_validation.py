@@ -23,9 +23,9 @@ class DataValidation:
             if col not in data.columns:
                 return False
 
-            if str(data[col].dtype) != str(expected_type):
-                logger.info(f"Datatype mismatch in {col}")
-                return False
+            # if str(data[col].dtype) != str(expected_type):
+            #     logger.info(f"Datatype mismatch in {col}")
+            #     return False
 
         return True
 

@@ -26,7 +26,7 @@ class DataTransformation:
     
     def preprocessor(self, data: pd.DataFrame):
         numerical_features = np.array(data.select_dtypes(['int64', 'float64']).columns)
-        categorical_features = np.array(data.select_dtypes(['str', 'object']).columns)
+        categorical_features = np.array(data.select_dtypes(['object']).columns)
 
         numerical_pipeline = Pipeline([
             ("imputer", SimpleImputer(strategy='median')),
@@ -92,3 +92,6 @@ class DataTransformation:
             except Exception as e:
                 logger.exception(e)
                 raise e
+            
+        else:
+            logger.exception(f"Data is not Valid. Data Transformation Failed.")

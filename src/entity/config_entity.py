@@ -25,3 +25,10 @@ class DataTransformationConfig:
     target_variable: str
     preprocessor_path: Path
     status_file_path: Path
+
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    processed_data_dir: Path
+    model_path: Path
+    params: dict
