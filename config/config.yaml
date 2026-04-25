@@ -22,5 +22,5 @@ DataTransformation:
 ModelTrainer: 
   root_dir: artifacts/model_trainer
   processed_data_dir: artifacts/data_transformation
-  model_path: artifacts/model_trainer/model.joblib
+  model_path: artifacts/model_trainer
   
