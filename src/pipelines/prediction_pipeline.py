@@ -4,7 +4,8 @@ import pandas as pd
 
 class PredictionPipeline:
     def __init__(self):
-        self.preprocessor = joblib.load(Path("artifacts/data_transformation/preprocessor.joblib"))
+        preprocesser_artifact = joblib.load(Path("artifacts/data_transformation/preprocessor.joblib"))
+        self.preprocessor = preprocesser_artifact["preprocessor"]
         self.model = joblib.load(Path("artifacts/model_trainer/best_model.joblib"))
 
     def predict(self, data: pd.DataFrame):
