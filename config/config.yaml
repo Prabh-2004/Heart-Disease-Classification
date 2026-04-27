@@ -14,13 +14,19 @@ DataValidation:
 DataTransformation:
   root_dir: artifacts/data_transformation
   unzipped_data_dir: artifacts/data_ingestion/heart.csv
-  train_file_path: artifacts/data_transformation
-  test_file_path: artifacts/data_transformation
+  train_data: artifacts/data_transformation/train_data
+  test_data: artifacts/data_transformation/test_data
   preprocessor_path: artifacts/data_transformation/preprocessor.joblib
   status_file_path: artifacts/data_validation/status.txt
 
 ModelTrainer: 
   root_dir: artifacts/model_trainer
   processed_data_dir: artifacts/data_transformation
+  model_path: artifacts/model_trainer
+
+ModelEvaluation:
+  root_dir: artifacts/model_evaluation
+  x_test_data_path: artifacts/data_transformation
+  y_test_data_path: artifacts/data_transformation
   model_path: artifacts/model_trainer
   
