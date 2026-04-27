@@ -71,13 +71,17 @@ class DataTransformation:
                 logger.info("Dataset successfully transformed.")
 
                 # save the processed training and testing data
-                X_train.to_csv(os.path.join(self.config.train_file_path, "x_train.csv"), index=False)
-                y_train.to_csv(os.path.join(self.config.train_file_path, "y_train.csv"), index=False)
-                X_test.to_csv(os.path.join(self.config.test_file_path, "x_test.csv"), index=False)
-                y_test.to_csv(os.path.join(self.config.test_file_path, "y_test.csv"), index=False)
 
-                logger.info(f"Training Data successfully saved at: {self.config.train_file_path}.")
-                logger.info(f"Test Data successfully saved at: {self.config.test_file_path}.")
+                os.makedirs(self.config.train_data, exist_ok=True)
+                os.makedirs(self.config.test_data, exist_ok=True)
+
+                X_train.to_csv(os.path.join(self.config.train_data, "x_train.csv"), index=False)
+                y_train.to_csv(os.path.join(self.config.train_data, "y_train.csv"), index=False)
+                X_test.to_csv(os.path.join(self.config.test_data, "x_test.csv"), index=False)
+                y_test.to_csv(os.path.join(self.config.test_data, "y_test.csv"), index=False)
+
+                logger.info(f"Training Data successfully saved at: {self.config.train_data}.")
+                logger.info(f"Test Data successfully saved at: {self.config.test_data}.")
 
                 # save the preprocessor model
                 preprocessor_dir, preprocessor_path = os.path.split(self.config.preprocessor_path)
