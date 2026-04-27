@@ -38,22 +38,6 @@ feature_data = [[age, sex, chest_pain_type, resting_blood_pressure, cholestoral,
 
 data = pd.DataFrame(data=feature_data, columns=feature_name)
 
-# data = pd.DataFrame([{
-#     "age": age,
-#     "sex": sex,
-#     "chest_blood_pain": chest_blood_pain,
-#     "resting_blood_pressure": resting_blood_pressure,
-#     "cholestoral":  cholestoral,
-#     "fasting_blood_sugar": fasting_blood_sugar,
-#     "rest_ecg":pain_type
-#     "Max_heart_rate":  Max_heart_rate,
-#     "exercise_induced_angina": exercise_induced_angina,
-#     "oldpeak":  oldpeak,
-#     "slope": slope,
-#     "vessels_colored_by_flourosopy":  vessels_colored_by_flourosopy,
-#     "thalassemia":  thalassemia,
-# }])
-
 st.divider()
 
 if st.button("Predict Heart Disease"):
