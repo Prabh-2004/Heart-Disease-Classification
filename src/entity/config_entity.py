@@ -29,13 +29,13 @@ class DataTransformationConfig:
 @dataclass
 class ModelTrainerConfig:
     root_dir: Path
-    processed_data_dir: Path
+    train_data_dir: Path
     model_path: Path
     params: dict
 
 @dataclass
 class ModelEvaluationConfig:
     root_dir: Path
-    x_test_data_path: Path
-    y_test_data_path: Path
+    test_data_dir: Path
     model_path: Path
+    metric_file_name: str

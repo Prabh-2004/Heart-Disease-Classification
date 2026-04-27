@@ -71,7 +71,7 @@ class ConfigurationManager:
 
         model_trainer_config = ModelTrainerConfig(
             root_dir=config.root_dir,
-            processed_data_dir=config.processed_data_dir,
+            train_data_dir=config.train_data_dir,
             model_path=config.model_path,
             params=params,
         )
@@ -85,9 +85,9 @@ class ConfigurationManager:
 
         model_evaluation_config = ModelEvaluationConfig(
             root_dir=config.root_dir,
-            x_test_data_path=config.x_test_data_path,
-            y_test_data_path=config.y_test_data_path,
+            test_data_dir=config.test_data_dir,
             model_path=config.model_path,
+            metric_file_name=config.metric_file_name,
         )
         return model_evaluation_config
     
