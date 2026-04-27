@@ -20,8 +20,8 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     unzipped_data_dir: Path
-    train_file_path: Path
-    test_file_path: Path
+    train_data: Path
+    test_data: Path
     target_variable: str
     preprocessor_path: Path
     status_file_path: Path
@@ -32,3 +32,10 @@ class ModelTrainerConfig:
     processed_data_dir: Path
     model_path: Path
     params: dict
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    x_test_data_path: Path
+    y_test_data_path: Path
+    model_path: Path
