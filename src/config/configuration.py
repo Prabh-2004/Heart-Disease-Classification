@@ -4,7 +4,8 @@ from src.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 
 class ConfigurationManager:
@@ -53,8 +54,8 @@ class ConfigurationManager:
         data_transformation_config = DataTransformationConfig(
             root_dir=config.root_dir,
             unzipped_data_dir=config.unzipped_data_dir,
-            train_file_path=config.train_file_path,
-            test_file_path=config.test_file_path,
+            train_data=config.train_data,
+            test_data=config.test_data,
             preprocessor_path=config.preprocessor_path,
             target_variable=schema.target_column,
             status_file_path=config.status_file_path,
@@ -76,7 +77,19 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
-        
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.ModelEvaluation
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            x_test_data_path=config.x_test_data_path,
+            y_test_data_path=config.y_test_data_path,
+            model_path=config.model_path,
+        )
+        return model_evaluation_config
     
     
     
