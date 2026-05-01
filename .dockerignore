@@ -1,0 +1,7 @@
+venv/
+artifacts/
+logs/
+notebooks/
+.env
+.gitignore
+README.md
